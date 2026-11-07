@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="description" content="DATARYA CAM-MUSIC: create harmonies and shape sound through gestures in a browser.">
+  <title>DATARYA CAM-MUSIC — Camera · Gesture · Sound</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="DATARYA CAM-MUSIC home">DATARYA<span class="brand-mark">/LAB</span></a>
+    <div class="top-right"><span class="dot"></span> EXPERIMENT 001 <span class="muted">/ 2026</span></div>
+  </header>
+
+  <main id="top">
+    <section class="intro">
+      <div class="eyebrow">AN EXPERIMENTAL BROWSER INSTRUMENT</div>
+      <h1>Shape sound<br>with <em>movement.</em></h1>
+      <p>Harmony in your left hand. Expression in your right.<br class="desktop-only"> A camera, your hands, and a new way to make music.</p>
+      <div class="sub-label">CAMERA <span>·</span> GESTURE <span>·</span> SOUND</div>
+    </section>
+
+    <section class="instrument" aria-label="CAM-MUSIC instrument">
+      <div class="instrument-toolbar">
+        <div class="instrument-name"><span class="instrument-icon">◈</span> CAM-MUSIC <small>INSTRUMENT / 01</small></div>
+        <div id="status" class="status" role="status" aria-live="polite"><span class="status-light"></span> READY TO START</div>
+      </div>
+
+      <div class="stage">
+        <video id="webcam" autoplay muted playsinline aria-label="Live webcam preview"></video>
+        <canvas id="overlay" aria-hidden="true"></canvas>
+        <div class="camera-idle" id="cameraIdle">
+          <span class="idle-graphic" aria-hidden="true">◌</span>
+          <span>YOUR HANDS BECOME THE INSTRUMENT</span>
+          <small>Start the camera to begin hand tracking.</small>
+        </div>
+        <div class="stage-corner tl">01 — VISION</div>
+        <div class="stage-corner tr" id="handCount">0 HANDS</div>
+        <div class="stage-corner bl">LOCAL PROCESSING</div>
+        <div class="stage-corner br" id="frameInfo">WAITING FOR CAMERA</div>
+      </div>
+
+      <div class="hand-panels">
+        <div class="hand-panel">
+          <span class="hand-symbol">L</span>
+          <div><span class="hand-caption">LEFT HAND / HARMONY</span><strong id="harmonyValue">—</strong><span class="hand-detail" id="harmonyHint">Move horizontally to choose a chord</span></div>
+        </div>
+        <div class="hand-panel">
+          <span class="hand-symbol">R</span>
+          <div><span class="hand-caption">RIGHT HAND / EXPRESSION</span><strong id="expressionValue">—</strong><span class="hand-detail" id="expressionHint">Move up/down to shape volume</span></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="control-fields">
+          <label>KEY <select id="keySelect" aria-label="Musical key">
+            <option value="0">C</option><option value="1">C♯</option><option value="2">D</option><option value="3">D♯</option>
+            <option value="4">E</option><option value="5">F</option><option value="6">F♯</option><option value="7">G</option>
+            <option value="8">G♯</option><option value="9">A</option><option value="10">A♯</option><option value="11">B</option>
+          </select></label>
+          <label>MODE <select id="modeSelect" aria-label="Mode"><option value="major">MAJOR</option><option value="minor">MINOR</option></select></label>
+          <label>SOUND <select id="waveSelect" aria-label="Synthesizer waveform"><option value="sine">SOFT / SINE</option><option value="triangle">WARM / TRIANGLE</option><option value="sawtooth">BRIGHT / SAWTOOTH</option></select></label>
+        </div>
+        <div class="actions">
+          <button id="demoButton" class="button button-secondary" type="button">PLAY DEMO CHORD</button>
+          <button id="cameraButton" class="button button-primary" type="button">START CAMERA <span>↗</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works" aria-label="How it works">
+      <div class="section-heading"><span>THE SYSTEM</span><span>THREE STEPS</span></div>
+      <div class="steps">
+        <div><span class="step-number">01 / TRACK</span><h2>21 landmarks.<br>Every hand.</h2><p>Computer vision maps your hands in real time, with camera frames interpreted on your device.</p></div>
+        <div><span class="step-number">02 / HARMONIZE</span><h2>Motion becomes<br>harmony.</h2><p>Move your left hand through four zones to switch between voiced chords.</p></div>
+        <div><span class="step-number">03 / SHAPE</span><h2>Make it<br>your own.</h2><p>Use your right hand to control the loudness and timbre of a Web Audio synthesizer.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>DATARYA — INDEPENDENT CREATIVE TECHNOLOGY</span><span>CHROME · DESKTOP · WEBCAM · WEB AUDIO</span></footer>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
