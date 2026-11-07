@@ -41,3 +41,7 @@ El resultado se genera en `dist/` y es compatible con despliegue estático en Cl
 ## Nota sobre demos
 
 El dashboard, el chatbot y AUREA son ejemplos ficticios. Sus cifras, nombres e insights existen únicamente para demostrar capacidades visuales/interactivas.
+
+## Proyectos experimentales
+
+- **[DATARYA CAM-MUSIC](./projects/cam-music/)** — instrumento musical experimental basado en webcam, seguimiento de manos (MediaPipe) y síntesis Web Audio. Incluye código y guía de uso. [Ver concepto original publicado](https://datarya-cam-music.diegojuarez1417.chatgpt.site/). La versión alojada aquí es una reconstrucción para portafolio, no una exportación del código fuente original.
